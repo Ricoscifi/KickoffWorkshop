@@ -160,6 +160,7 @@ public class SensorBNO055IMU extends LinearOpMode
                     return gravity.toString();
                     }
                 })
+        telemetry.update()
             .addData("mag", new Func<String>() {
                 @Override public String value() {
                     return String.format(Locale.getDefault(), "%.3f",
@@ -168,6 +169,7 @@ public class SensorBNO055IMU extends LinearOpMode
                                     + gravity.zAccel*gravity.zAccel));
                     }
                 });
+                telemetry.update()
     }
 
     //----------------------------------------------------------------------------------------------
